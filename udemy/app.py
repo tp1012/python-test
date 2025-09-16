@@ -65,3 +65,45 @@ df = pd.DataFrame(
 edited_df = st.data_editor(df)
 edited_df = edited_df[edited_df["mark"] == True]
 st.write(edited_df.loc[edited_df["rating"].idxmax()]["colors"])
+
+age = st.slider("あなたは何歳ですか？",0,130,40)
+st.write("わたしは",age,"歳です")
+
+import datetime
+date = st.date_input("あなたが生まれたのはいつですか？",datetime.date(2000,1,1))
+st.write("わたしは",date,"生まれです")
+
+text = st.text_input("入力してください","XXXXXXXX")
+st.write(text)
+
+col1,col2 = st.columns(2)
+with col1:
+    st.title("Column1")
+    st.write("これはカラムの1です")
+with col2:
+    st.title("Column2")
+    st.write("これはカラムの2です")
+
+tab1,tab2 = st.tabs(["tab1","tab2"])
+with tab1:
+    st.title("Tab1")
+    st.write("これはタブの1です")
+with tab2:
+    st.title("Tab2")
+    st.write("これはタブの2です")
+
+with st.expander("もっと詳しく見る"):
+    st.write("XXXXXXXXXXXXXXXXXXXXX")
+
+with st.sidebar:
+    st.title("XXXXXXXXXXXXXXXXXXXXX")
+    st.write("XXXXXXXXXXXXXXXXXXXXX")
+
+agree = st.checkbox("同意しますか？")
+if agree == True:
+    st.toast("Thank You",icon = "👍")
+
+birthday = st.checkbox("今日はあなたの誕生日ですか？")
+if birthday == True:
+    st.toast("おめでとう！",icon = "👍")
+    st.balloons()
