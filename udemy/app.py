@@ -107,3 +107,8 @@ birthday = st.checkbox("今日はあなたの誕生日ですか？")
 if birthday == True:
     st.toast("おめでとう！",icon = "👍")
     st.balloons()
+
+st.page_link("app.py",label="Home",icon="☺️")
+st.page_link("pages/page1.py",label="page1")
+st.page_link("pages/page2.py",label="page2")
+st.page_link("https://qiita.com/papasim824/items/1804bc1bd8d4c195d8a8",label="other")
